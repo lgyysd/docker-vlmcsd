@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV VERSION 812
+ENV VERSION svn812
 
 RUN apk update \
     && apk upgrade \
@@ -14,6 +14,7 @@ RUN apk update \
     && mv vlmcsd / \
     && cd / \
     && apk del build-base gcc abuild binutils cmake \
+    && rm -f "$VERSION".tar.gz \
     && rm -rf /vlmcsd-"$VERSION"  \
     && rm -rf /var/cache/apk/* \
     && /vlmcsd -V
