@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV VERSION svn1031
+ENV VERSION svn1065
 
 RUN apk update \
     && apk upgrade \
@@ -10,8 +10,8 @@ RUN apk update \
     && tar xzf "$VERSION".tar.gz \
     && cd vlmcsd-"$VERSION" \
     && make \
-    && chmod +x vlmcsd \
-    && mv vlmcsd / \
+    && chmod +x bin/vlmcsd \
+    && mv bin/vlmcsd / \
     && cd / \
     && apk del build-base gcc abuild binutils cmake \
     && rm -f "$VERSION".tar.gz \
