@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV VERSION svn1085
+ENV VERSION svn1099
 
 RUN apk update \
     && apk upgrade \
