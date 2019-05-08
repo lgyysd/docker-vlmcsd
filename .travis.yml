@@ -1,0 +1,13 @@
+language: bash
+server:
+  - docker
+
+before_install:
+  - git clone -b tags "https://${GH_REF}"
+
+before_script:
+  - chmod +x update.sh
+
+script:
+- bash update.sh
+- "curl -H 'Content-Type: application/json' --data @update.json -X POST $BUILD_WEBHOOK"
