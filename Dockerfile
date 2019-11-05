@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV VERSION svn1112
+ENV VERSION 
 
 RUN apk update \
     && apk upgrade \
